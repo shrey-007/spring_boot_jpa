@@ -59,6 +59,20 @@ public class Demo6Application {
 			System.out.println(user3);
 		}
 
+		//USING EXPLICIT QUERY METHODS
+
+
+		List<User> users2=userRepository.getAllUsers();
+		for(User user3:users2){
+		System.out.println(user3);
+	                         }
+		System.out.println("___________________________________________");
+		List<User> users3=userRepository.func2("shrey saxena","gwalior");
+		for(User user3:users3){
+			System.out.println(user3);
+		}
+
+
 
 	}
 
