@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.util.List;
 import java.util.Optional;
 
 @SpringBootApplication
@@ -47,6 +48,16 @@ public class Demo6Application {
 		userRepository.delete(user2);
 
 		//we can also use deleteById()
+
+
+		//USING CUSTOM QUERY METHODS,JUST CREATE ABSTRACT METHOD IN INTERFACE AND FOLLOW CAMELCASE CONVENTION AND YOU DONT EVEN
+        //NEED TO WRITE IMPLEMENTATIONS OF THOSE METHODS SPRINGBOOT WILL ITSELF CREATE QUERY AND GIVE RESULT
+		//LINK TO FOLLOW CONVENTION IS https://docs.spring.io/spring-data/jpa/docs/current-SNAPSHOT/reference/html/#reference
+
+		List<User> users= userRepository.findByCity("gwalior");
+		for(User user3:users){
+			System.out.println(user3);
+		}
 
 
 	}
